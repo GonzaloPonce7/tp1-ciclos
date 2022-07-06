@@ -12,43 +12,82 @@ for (let i = 2; i >= 0; i--) {
     }
 }
 
+// if(ingresar){
+//     let hp = 100;
+//     const shootDamage = 20;
+//     const molotovDamage = 40;
+//     const axeDamage = 40;
+//     let action = prompt ("Chose your action: \n1 - shoot. \n2 - molotov. \n3 - axe. \n Press x to run away, you chicken");
+
+//     while(action != ('x' || 'X') && hp > 0){ 
+//         console.log('estoy en el while. hp = ' + hp)
+//         switch (action) {
+//             case '1':
+//                     hp -= shootDamage
+//                     alert ("Vecna's hp = " + hp);
+//                 break;
+
+//             case '2':
+//                     hp -= molotovDamage
+//                     alert ("Vecna's hp = " + hp);
+//                 break;
+
+//             case '3':
+//                     hp -= axeDamage
+//                     alert ("Vecna's hp = " + hp);
+//                 break;
+        
+//             default:
+//                 alert('Wrong choice')
+//                 break;
+//         }
+//         action = prompt ("Chose your action: \n1 - shoot. \n2 - molotov. \n3 - axe. \n Press x to run away, you chicken");
+//     }
+//     alert ('Vecna is over... for now')
+
+// } else{
+//     alert('look behind you, demogorgon is comming')
+// }
+
+
 if(ingresar){
     let hp = 100;
-    const shoot = 20;
-    const molotov = 40;
-    const axe = 40;
-    let action = prompt ("Chose your action: \n1 - shoot. \n2 - molotov. \n3 - axe. \n Press x to run away, you chicken");
+    const shootDamage = 20;
+    const molotovDamage = 40;
+    const axeDamage = 40;
+    let action ;
 
-    while(action != 'x' && action != 'X' && hp <= 0){
+    do{ 
+        action = prompt ("Chose your action: \n1 - shoot. \n2 - molotov. \n3 - axe. \n Press x to run away, you chicken");
         switch (action) {
             case '1':
-                function s (hp, shoot){
-                    return hp - shoot;
+                    hp -= shootDamage
                     alert ("Vecna's hp = " + hp);
-                }
                 break;
 
             case '2':
-                function m (hp, molotov) {
-                    return hp - molotov;
+                    hp -= molotovDamage
                     alert ("Vecna's hp = " + hp);
-                }
                 break;
 
             case '3':
-                function a (hp, molotov) {
-                    return hp - axe;
+                    hp -= axeDamage
                     alert ("Vecna's hp = " + hp);
-                }
                 break;
-        
+
+            case 'x' || 'X':
+                alert ('You flee the batlle... your friends are dead now');
+                break;
             default:
                 alert('Wrong choice')
                 break;
         }
-        let action = prompt ("Chose your action: \n1 - shoot. \n2 - molotov. \n3 - axe. \n Press x to run away, you chicken");
-    }
+        
+    } while(action != ('x' || 'X') && hp > 0);
+    if(hp <= 0){
+        alert ('Vecna is over... for now')
+    }    
 
 } else{
-    alert('look behind you, demogorgon is comming')
+    alert('look behind you, demogorgon is comming');
 }
